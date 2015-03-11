@@ -1,0 +1,11 @@
+clients_homepage:
+    path:     /
+    defaults: { _controller: clientsBundle:Default:index }
+
+clients_accounts:
+    path:       /accounts
+    defaults:   { _controller: clientsBundle:Accounts:index }
+
+clients_accountsInfo:
+    path:       /accounts/{id}
+    defaults:   {_controller: clientsBundle:Accounts:accountInfo}

@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<div class="container bootcards-container" id="main">
+        <div class="row">
+            <div class="col-sm-12 bootcards-list" id="list" data-title="Companies">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="search-form">
+                            <div class="row">
+                                <div class="col-xs-9">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Zoek Accounts...">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#" class="btn btn-default btn-primary" data-toggle="modal" data-target="#basicModal">
+                                        <i class="fa fa-plus"></i>
+                                        <span>Add</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group">
+                    	{% for user in users %}
+	                       	{# <a class="list-group-item pjax" href={{ user.id }}> #}
+                            <a class="list-group-item pjax" href="{{ url('clients_accountsInfo', {'id': user.id}) }}">
+
+	                            <div class="row">
+	                                <div class="col-sm-12">
+	                                	<h4>{{ user.username }}</h4>
+	                                </div>
+	                            </div>
+	                        </a>
+	                    {% endfor %}
+                    </div>
+                    <div class="panel-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

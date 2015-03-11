@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<div class="container bootcards-container" id="main">
+		<div class="row">
+			<div class="col-sm-5 bootcards-cards hidden-xs" id="listDetails">
+				<!--Account details-->
+				<div id="accountCard">
+					<div class="panel panel-default">
+						<div class="panel-heading clearfix">
+							<h3 class="panel-title pull-left">Account Details</h3>
+							<div class="btn-group pull-right visible-xs">
+								<a class="btn btn-primary" href="" data-toggle="modal" data-target="#editModal">
+									<i class="fa fa-pencil"></i>
+									<span>Edit</span>
+								</a>
+							</div>	
+								<a class="btn btn-primary pull-right hidden-xs" href="" data-toggle="modal" data-target="#editModal">
+									<i class="fa fa-pencil"></i>
+									<span>Edit</span>
+								</a>
+							</div>
+							<div class="list-group">
+							{% for info in userInfo %}
+								<div class="list-group-item">
+									<h4 class="list-group-item-heading">Email</h4>
+									<label>{{info.email}}</label>
+								</div>
+								<div class="list-group-item">
+									<h4 class="list-group-item-heading">Username</h4>
+									<label>{{info.username}}</label>
+								</div>
+								<div class="list-group-item">
+									<h4 class="list-group-item-heading">Password</h4>
+									<label>{{info.password}}</label>
+								</div>
+								<div class="list-group-item">
+									<h4 class="list-group-item-heading">Permission Name</h4>
+									<label>{{info.permission.name}}</label>
+								</div>
+							{% endfor %}
+						</div>
+						<div class="panel-footer">
+						</div>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
